@@ -1,0 +1,24 @@
+{
+    "name": "whtkim/base",
+    "description": "The basic utils for php, such as DTO, Crypt, Exception etc.",
+    "type": "library",
+    "license": "Apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "Htk\\Base\\": "src/"
+        },
+        "files": [
+            "src/Library/functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Johnson King",
+            "email": "me@wht.kim"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.2"
+    }
+}
