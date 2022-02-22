@@ -23,8 +23,8 @@ class Container extends Singleton
             throw new ClassNotFoundException($class);
         }
 
-        $classKey  = md5("{$class}-" . self::paramHash($arguments));
         $container = self::getSingleton();
+        $classKey  = self::getClassKey($class, $arguments);
         if (!isset($container->instances[$classKey])) {
             $container->instances[$classKey] = new $class(...$arguments);
         }
@@ -33,16 +33,17 @@ class Container extends Singleton
     }
 
     /**
-     * 对参数进行HASH
-     * @param array $arguments 参数
+     * 获取指定类唯一KEY
+     * @param string $class     类名
+     * @param array  $arguments 参数
      *
      * @return string
      * @author JohnsonKing
      */
-    private static function paramHash(array $arguments)
+    private static function getClassKey(string $class, array $arguments)
     {
         ksort($arguments);
-        $jsonData = json_encode($arguments, 64|256);
-        return md5($jsonData);
+        $argsJson = json_encode($arguments, 64|256);
+        return md5("{$class}-{$argsJson}");
     }
 }
