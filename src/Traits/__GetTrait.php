@@ -8,9 +8,8 @@ use Htk\Base\Library\Container;
 /**
  * 自动暴露私有和保护属性
  *
- * @desc 1.在类注释上添加@property
- *       2.各个元素间通过单个空格隔开
- *       3.示例：@property string $name 姓名
+ * 1.在类注释上添加@property
+ * 2.各个元素间通过单个空格隔开
  */
 trait __GetTrait
 {
