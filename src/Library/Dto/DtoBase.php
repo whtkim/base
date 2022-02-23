@@ -65,12 +65,12 @@ class DtoBase
 
     /**
      * 设置提示信息
-     * @param string $message 提示信息
+     * @param string|null $message 提示信息
      * 
      * @return $this
      * @author JohnsonKing
      */
-    public function setMessage(string $message): self
+    public function setMessage(?string $message): self
     {
         $this->message = $message;
         return $this;
