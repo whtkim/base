@@ -24,7 +24,7 @@ interface IEvent
      * @param string $eventName 事件名：空字符串则为类名去驼峰化
      * @param bool   $isGlobal  是否为全局事件
      */
-    public static function create(string $eventName = '', bool $isGlobal = false);
+    public static function create(string $eventName, bool $isGlobal = false);
 
     /**
      * 添加事件订阅者

@@ -35,7 +35,7 @@ abstract class EventManager implements IEvent
     /**
      * @inheritDoc
      */
-    public static function create(string $eventName = '', bool $isGlobal = false)
+    public static function create(string $eventName, bool $isGlobal = false)
     {
         return $isGlobal ? Container::make(static::class, [$eventName]) : (new static($eventName));
     }
